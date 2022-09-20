@@ -1,3 +1,17 @@
+export enum BreweryType {
+  "micro",
+  "nano",
+  "regional",
+  "brewpub",
+  "large",
+  "planning",
+  "bar",
+  "contract",
+  "proprietor",
+  "taproom",
+  "closed",
+}
+
 export type BreweryKey =
   | "obdb_id"
   | "name"
@@ -11,8 +25,6 @@ export type BreweryKey =
   | "postal_code"
   | "website_url"
   | "phone"
-  | "created_at"
-  | "updated_at"
   | "country"
   | "longitude"
   | "latitude"
@@ -31,10 +43,15 @@ export interface Brewery {
   postal_code: string;
   website_url: string;
   phone: string;
-  created_at: string;
-  updated_at: string;
   country: string;
   longitude: Float64Array;
   latitude: Float64Array;
   tags: string[];
+}
+
+export interface BreweryLite {
+  name: string;
+  city: string;
+  state: string;
+  country: string;
 }
